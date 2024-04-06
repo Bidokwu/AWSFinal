@@ -1,0 +1,31 @@
+
+{% extends 'layouts/vendor_base.html' %}
+{% load static %}
+{% block content %}
+  
+    {% comment %} Navbar starts here {% endcomment %}
+
+    <!-- Navbar -->
+    {% include 'includes/navbar.html' %}
+    <!-- Navbar -->
+
+    {% comment %} navbar ends here {% endcomment %}
+
+    <!-- Hero sections starts here -->
+   
+    {% include 'includes/hero.html' %}
+    <!-- hero section ends here -->
+
+    <!-- what we do -->
+{% comment %} {% include 'products.html' %} {% endcomment %}
+<section class="container">
+    <p>Some content goes here</p>
+</section>
+    <!-- what we do end -->
+
+<!-- Footer start -->
+{% include 'includes/footer.html' %}
+<!-- Footer end -->
+
+{% comment %} {% endblock content %} {% endcomment %}
+{% endblock content %}
