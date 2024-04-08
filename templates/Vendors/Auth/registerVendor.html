@@ -1,18 +1,27 @@
 {% extends 'layouts/base-auth.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
-<div class="jumbotron">
-   {% if registered %}
-        <h1>Thanks for registering, Please Log in!</h1>
-    {% else %}
-        <h1>Registration for Vendors:</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ var_tvar_vendorForm.as_p }}
-            {{ var_vendorAddForm.as_p }}
-            <input type="submit" value="Register" class="btn btn-primary">
-        </form>
-    {% endif %}
+<div class="container-default py-5" style="background:#0D6EFD;">
+    <div class="container my-3 shadow position-relative top-5 button-5" style="width:40%; height:60%; background:white;">
+        {% if registered %}
+             <h1>Thanks for registering, Please Log in!</h1>
+         {% else %}
+             <h1 class="text-center justify-conent-center align-item-center my-3 fw-bolder">Registration for Vendors:</h1>
+             <form class="form-group" action="" method="POST" enctype="multipart/form-data">
+                 {% csrf_token %}
+                <div class="form-group">
+                    {{ var_tvar_vendorForm }}
+                </div> 
+                <div class="form-group">
+                    {{ var_vendorAddForm }}
+                </div>
+                 <input type="submit" value="Register" class="btn btn-primary">
+                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="{% url 'login' %}"
+                          style="color: #393f81;">Login</a></p>
+             </form>
+         {% endif %}
+    </div>
 </div>
 
 

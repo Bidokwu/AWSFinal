@@ -125,7 +125,7 @@ def dashboard(request):
     
 
 def clientDash(request):
-    return render(request,'home/clientDash.html')
+    return render(request,'dashboard/clientDash.html')
 
 def vendorDash(request):
-    return render(request,'home/vendorDash.html')
+    return render(request,'dashboard/vendorDash.html')

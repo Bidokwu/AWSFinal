@@ -39,7 +39,7 @@ class Client(models.Model):
     address = models.CharField(max_length=100, default=False)
     country = models.CharField(max_length=500)
     nationality = models.CharField(max_length=500)
-    email = models.EmailField(('email address'), unique=True, default=False)
+    # email = models.EmailField(('email address'), unique=True, default=False)
     is_client=models.BooleanField(default=True)
 
     USERNAME_FIELD = 'email'

@@ -58,6 +58,8 @@ INSTALLED_APPS = [
 
     "home",
     "landingpage",
+    'crispy_forms',
+    'crispy_bootstrap4',
 
     # Tooling Dynamic_DT
     'django_dyn_dt',             # <-- NEW: Dynamic_DT
@@ -67,6 +69,8 @@ INSTALLED_APPS = [
     'rest_framework',            # Include DRF           # <-- NEW 
     'rest_framework.authtoken',  # Include DRF Auth      # <-- NEW     
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

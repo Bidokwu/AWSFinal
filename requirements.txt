@@ -1,20 +1,29 @@
-# Core
-django==4.2.9
-python-dotenv==1.0.1
-str2bool==1.1
-
-# UI 
+asgiref==3.8.1
+contourpy==1.2.0
+crispy-bootstrap4==2024.1
+cycler==0.12.1
+Django==4.2.9
 django-admin-datta==1.0.10
-
-# Tooling
-django-dynamic-datatb==1.0.25
 django-api-generator==1.0.17
+django-crispy-forms==2.1
 django-debug-toolbar==4.2.0
-
-# Deployment
-whitenoise==6.6.0
+django-dynamic-datatb==1.0.25
+djangorestframework==3.15.1
+fonttools==4.50.0
 gunicorn==21.2.0
-
-# DB Layer
-# psycopg2-binary
-# mysqlclient
+kiwisolver==1.4.5
+matplotlib==3.8.3
+numpy==1.26.4
+packaging==24.0
+pandas==2.2.1
+pillow==10.2.0
+pyparsing==3.1.2
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
+pytz==2024.1
+six==1.16.0
+sqlparse==0.4.4
+str2bool==1.1
+typing_extensions==4.10.0
+tzdata==2024.1
+whitenoise==6.6.0

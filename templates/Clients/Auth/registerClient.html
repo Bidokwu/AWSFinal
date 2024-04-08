@@ -1,19 +1,20 @@
 {% extends 'layouts/vendor_base.html' %}
 {% block content %}
 
-<div class="jumbotron">
-   {% if registered %}
-        <h1>Thanks for registering, Please Log in!</h1>
-    {% else %}
-        <h1>Registration for Students:</h1>
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ var_clientForm.as_p }}
-            {{ var_clientAddForm.as_p }}
-            <input type="submit" value="Register" class="btn btn-primary">
-        </form>
-    {% endif %}
+<div class="container-default p-5" style="background:#0D6EFD;">
+    <div class="container my-3 shadow position-relative top-5 button-5" style="width:40%; height:60%; background:white;">
+    {% if registered %}
+            <h1>Thanks for registering, Please Log in!</h1>
+        {% else %}
+            <h1>Registration for Client:</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ var_clientForm }}
+                {{ var_clientAddForm }}
+                <input type="submit" value="Register" class="btn btn-primary my-3">
+            </form>
+        {% endif %}
+    </div>
 </div>
-
 
 {% endblock %}
