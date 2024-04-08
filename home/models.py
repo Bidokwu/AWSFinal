@@ -61,7 +61,8 @@ class Vendor(models.Model):
     internal_professional_services = models.CharField(max_length=3, default=False)
     last_demo_date = models.CharField(max_length=20, default=False)
     last_reviewed_date = models.CharField(max_length=20, default=False)
-    document_to_attach = models.FileField(max_length=3, default=False)
+    document_to_attach = models.FileField(max_length=3, default=None,blank=True, null=True)
+    is_client=models.BooleanField(default=False)
     
     def __str__(self):
         return self.vendor.username 

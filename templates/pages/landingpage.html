@@ -15,13 +15,19 @@
    
     {% include 'includes/hero.html' %}
     <!-- hero section ends here -->
+    {% comment %} services starts here {% endcomment %}
+    
+    {% include 'includes/services.html' %}
+    
+    {% comment %} Services ends here  {% endcomment %}
 
-    <!-- what we do -->
-{% comment %} {% include 'products.html' %} {% endcomment %}
-<section class="container">
-    <p>Some content goes here</p>
-</section>
-    <!-- what we do end -->
+    {% comment %} map starts here {% endcomment %}
+    
+    {% include 'includes/world_map.html' %}
+    
+    {% comment %} map ends here {% endcomment %}
+    
+
 
 <!-- Footer start -->
 {% include 'includes/footer.html' %}

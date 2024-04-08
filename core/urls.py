@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.authtoken.views import obtain_auth_token # <-- NEW
+from home import views  
 
 urlpatterns = [
     path("", include('landingpage.urls')),
-    path('dashboard/', include('home.urls')),
-    path("admin/", admin.site.urls),
+    path('', include('home.urls')),
+    path('dashboard/', views.dashboard,  name="dashboard"),
     path("", include('admin_datta.urls')),
     path('', include('django_dyn_dt.urls')), # <-- NEW: Dynamic_DT Routing   
+    path("admin/", admin.site.urls),
 ]
 
 # Lazy-load on routing is needed

@@ -1,15 +1,15 @@
-{% extends 'gradesApp/base.html' %}
-{% block body_block %}
+{% extends 'layouts/base-auth.html' %}
+{% block content %}
 
 <div class="jumbotron">
    {% if registered %}
         <h1>Thanks for registering, Please Log in!</h1>
     {% else %}
-        <h1>Registration for Students:</h1>
-        <form action="" method="POST">
+        <h1>Registration for Vendors:</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ var_studentForm.as_p }}
-            {{ var_studentAddForm.as_p }}
+            {{ var_tvar_vendorForm.as_p }}
+            {{ var_vendorAddForm.as_p }}
             <input type="submit" value="Register" class="btn btn-primary">
         </form>
     {% endif %}

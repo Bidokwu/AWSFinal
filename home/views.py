@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import *
 
-def index(request):
+def homepage(request):
 
   context = {
     'segment'  : 'index',
@@ -37,7 +37,7 @@ def userLogout(request):
   
   
 def register(request):
-    return render(request,'home/register.html')
+    return render(request,'account/register.html')
 
 def registerClient(request):
     registered=False
@@ -55,7 +55,7 @@ def registerClient(request):
     else:
         var_clientForm=clientForm()
         var_clientAddForm=clientAddForm()
-    return render(request,'home/registerclient.html',{'var_clientForm':var_clientForm,'var_clientAddForm':var_clientAddForm,'registered':registered})
+    return render(request,'Clients/Auth/registerclient.html',{'var_clientForm':var_clientForm,'var_clientAddForm':var_clientAddForm,'registered':registered})
 
 
 def registerVendor(request):
@@ -74,7 +74,7 @@ def registerVendor(request):
     else:
         var_vendorForm=vendorForm()
         var_vendorAddForm=vendorAddForm()
-    return render(request,'home/registerVendor.html',{'var_vendorForm':var_vendorForm,'var_vendorAddForm':var_vendorAddForm,'registered':registered})
+    return render(request,'Vendors/Auth/registerVendor.html',{'var_vendorForm':var_vendorForm,'var_vendorAddForm':var_vendorAddForm,'registered':registered})
     
 def userLogin(request):
     invalidlogin=False
@@ -85,16 +85,32 @@ def userLogin(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('index'))
+                try:
+                    current=Client.objects.get(client=request.user)
+                except Client.DoesNotExist:
+                    current=Vendor.objects.get(vendor=request.user)
+                    try:
+                        vendor = Vendor.objects.get(pk=id)
+                    except Vendor.DoesNotExist:
+                        vendor = None
+                    try:
+                        vendor = Vendor.objects.get(pk=id)
+                    except Vendor.DoesNotExist:
+                        vendor = None
+                    if current.is_client:
+                        return redirect('/clientDash/')
+                    else:
+                        return redirect('/vendorDash/')
+                return render(request,'/dashboard.html')
             else:
                 return HttpResponse('Account not active')
         else:
             invalidlogin=True
-            return redirect('/home/login/')
+            return redirect('pages/login/')
     else:
-        return render(request,'home/login.html',{'invalidlogin':invalidlogin})
+        return render(request,'pages/login.html',{'invalidlogin':invalidlogin})
 
-@login_required
+# @login_required
 def dashboard(request):
     try:
         current=Client.objects.get(client=request.user)
@@ -104,7 +120,7 @@ def dashboard(request):
         return redirect('/clientDash/')
     else:
         return redirect('/vendorDash/')
-    return render(request,'home/dashboard.html')
+    return render(request,'/dashboard.html')
 
     
 
