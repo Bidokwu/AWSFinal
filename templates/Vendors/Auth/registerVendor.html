@@ -1,28 +1,59 @@
 {% extends 'layouts/base-auth.html' %}
+{% load static %}
+
 {% block content %}
-{% load crispy_forms_tags %}
 
-<div class="container-default py-5" style="background:#0D6EFD;">
-    <div class="container my-3 shadow position-relative top-5 button-5" style="width:40%; height:60%; background:white;">
-        {% if registered %}
-             <h1>Thanks for registering, Please Log in!</h1>
-         {% else %}
-             <h1 class="text-center justify-conent-center align-item-center my-3 fw-bolder">Registration for Vendors:</h1>
-             <form class="form-group" action="" method="POST" enctype="multipart/form-data">
-                 {% csrf_token %}
-                <div class="form-group">
-                    {{ var_tvar_vendorForm }}
-                </div> 
-                <div class="form-group">
-                    {{ var_vendorAddForm }}
-                </div>
-                 <input type="submit" value="Register" class="btn btn-primary">
-                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="{% url 'login' %}"
-                          style="color: #393f81;">Login</a></p>
-             </form>
-         {% endif %}
+<div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="auth-bg">
+                <span class="r"></span>
+                <span class="r s"></span>
+                <span class="r s"></span>
+                <span class="r"></span>
+            </div>
+           
+                <div class="container-default " >
+                    <div class="container my-3 shadow position-relative top-5 button-5" >
+                        {% if registered %}
+                            <h1>Successfully Registered, Please Log in!</h1>
+                        {% else %}
+                                <div class="card">
+                                <form method="post" class="card-body text-center" enctype="multipart/form-data">
+                                    {% csrf_token %}
+
+                                    <div class="mb-4">
+                                        <i class="feather icon-user-plus auth-icon"></i>Vendors
+                                    </div>
+                                <div class="form-group">
+                                    {{ var_tvar_vendorForm }}
+                                    {{ var_vendorAddForm }}
+                                </div> 
+                                <div class="form-group">
+                                </div>
+                                <span class="text-danger d-block text-left">{{ field.errors }}</span>
+                                <div class="form-group text-left mt-4">
+                                        <div class="checkbox checkbox-fill d-inline">
+                                            <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-1" checked="">
+                                            <label for="checkbox-fill-1" class="cr"> Save Details</label>
+                                        </div>
+                                    </div>
+                                <input type="submit" value="Register" class="btn btn-primary">
+                                    <p class="mb-0 text-muted">Already have an account? <a href="{% url 'login' %}"> Log in</a></p>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>   
+                </form>
+            </div>
+        </div>
     </div>
-</div>
 
 
-{% endblock %}
+    <label class="d-none">
+        <i class="icon feather icon-sun" id="theme-indicator"></i>
+        <input type="checkbox" id="theme-switch" class="d-none">
+    </label>
+
+{% endblock content %}
+
+

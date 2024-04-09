@@ -20,7 +20,7 @@
           {% if request.user.is_superuser %}
           <a href="{% url 'admin:index' %}" class="nav-link ">
           {% else %}
-          <a href="{% url 'dashboard' %}" class="nav-link ">
+          <a href="{% url 'home:index' %}" class="nav-link ">
           {% endif %}
             <span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span>
           </a>
