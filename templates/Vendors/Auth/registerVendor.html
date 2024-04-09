@@ -16,6 +16,7 @@
                     <div class="container my-3 shadow position-relative top-5 button-5" >
                         {% if registered %}
                             <h1>Successfully Registered, Please Log in!</h1>
+                            <button class="btn btn-danger rounded"><a href="{% url "login" %}"> Go to Login</a></button>
                         {% else %}
                                 <div class="card">
                                 <form method="post" class="card-body text-center" enctype="multipart/form-data">
@@ -25,7 +26,7 @@
                                         <i class="feather icon-user-plus auth-icon"></i>Vendors
                                     </div>
                                 <div class="form-group">
-                                    {{ var_tvar_vendorForm }}
+                                    {{ var_vendorForm }}
                                     {{ var_vendorAddForm }}
                                 </div> 
                                 <div class="form-group">

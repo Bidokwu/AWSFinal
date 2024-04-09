@@ -16,6 +16,7 @@
                     <div class="container my-3 shadow position-relative top-5 button-5" >
                         {% if registered %}
                             <h1>Successfully Registered, Please Log in!</h1>
+                            <button class="btn btn-danger rounded"><a href="{% url "login" %}"> Go to Login</a></button>
                         {% else %}
                                 <div class="card">
                                 <form method="post" class="card-body text-center" enctype="multipart/form-data">

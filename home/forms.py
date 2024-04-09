@@ -30,7 +30,7 @@ class clientAddForm(forms.ModelForm):
         }
 
 class vendorForm(forms.ModelForm):
-    password=forms.CharField(widget=forms.PasswordInput())
+    password=forms.PasswordInput(attrs={'class':'form-control'})
     class Meta():
         model=User
         fields=('first_name','last_name','username','email','password')
@@ -46,9 +46,10 @@ class vendorForm(forms.ModelForm):
 class vendorAddForm(forms.ModelForm):
     class Meta():
         model=Vendor
-        fields=('address','location_countries', 'company_established', 'location_cities', 'contact_telephone_no', 'no_of_employees', 'internal_professional_services', 'last_demo_date', 'last_reviewed_date', 'document_to_attach')
+        fields=('company_name','address','location_countries', 'company_established', 'location_cities', 'contact_telephone_no', 'no_of_employees', 'internal_professional_services', 'last_demo_date', 'last_reviewed_date', 'document_to_attach')
         widgets = {
                     'address':forms.TextInput(attrs={'class': 'form-control'}),
+                    'company_name':forms.TextInput(attrs={'class': 'form-control'}),
                     'location_countries':forms.TextInput(attrs={'class': 'form-control'}),
                     'company_established':forms.TextInput(attrs={'class': 'form-control'}),
                     'contact_telephone_no':forms.TextInput(attrs={'class': 'form-control'}),
@@ -56,8 +57,9 @@ class vendorAddForm(forms.ModelForm):
                     'no_of_employees':forms.TextInput(attrs={'class': 'form-control'}),
                     'internal_professional_services':forms.TextInput(attrs={'class': 'form-control'}),
                     'last_demo_date':forms.TextInput(attrs={'class': 'form-control'}),
+                    'last_reviewed_date':forms.TextInput(attrs={'class': 'form-control'}),
                     # 'cloud_type' :forms.ChoiceField(choices=cloud_options, widget=forms.Select(attrs={'class':'form-control'})),
-                    # 'document_to_attach':forms.FileField(widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
+                    # 'document_to_attach':forms.FileField(widget=forms.FileInput(attrs={'class': 'form-control'}))
         }
 
 
