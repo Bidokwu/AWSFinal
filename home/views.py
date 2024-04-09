@@ -98,9 +98,9 @@ def userLogin(request):
                     except Vendor.DoesNotExist:
                         vendor = None
                     if current.is_client:
-                        return redirect('/clientDash/')
+                        return redirect('/client/')
                     else:
-                        return redirect('/vendorDash/')
+                        return redirect('/vendor/')
                 return render(request,'/dashboard.html')
             else:
                 return HttpResponse('Account not active')
@@ -117,9 +117,9 @@ def dashboard(request):
     except Client.DoesNotExist:
         current=Vendor.objects.get(vendor=request.user)
     if current.is_client:
-        return redirect('/clientDash/')
+        return redirect('/client/')
     else:
-        return redirect('/vendorDash/')
+        return redirect('/vendor/')
     return render(request,'/dashboard.html')
 
     

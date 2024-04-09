@@ -52,6 +52,7 @@ class Client(models.Model):
     
 class Vendor(models.Model):
     vendor=models.OneToOneField(User,on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=100, default=False)
     address = models.CharField(max_length=100, default=False)
     location_countries = models.CharField(max_length=500)
     company_established = models.PositiveIntegerField(default=False)
