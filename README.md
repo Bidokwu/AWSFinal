@@ -199,7 +199,8 @@ The theme used to style this starter provides the following files:
    |    |    |-- auth-signin.html     # Sign IN Page
    |    |    |-- auth-signup.html     # Sign UP Page
    |    |
-   |    |-- includes/       
+   |    |-- includes/   
+   |    |    |-- client_sidebar.html  #client sidebar component   
    |    |    |-- footer.html          # Footer component
    |    |    |-- sidebar.html         # Sidebar component
    |    |    |-- navigation.html      # Navigation Bar

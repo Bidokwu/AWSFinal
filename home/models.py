@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 
 class Product(models.Model):
     id    = models.AutoField(primary_key=True)
-    company_name = models.CharField(max_length=200, default=False)
+    # company_name = models.CharField(max_length=200, default=False)
     type_of_software = models.CharField(max_length=200, default=False)
-    vendor_id = models.PositiveIntegerField(default=False)
+    # vendor_id = models.PositiveIntegerField(default=False)
     website = models.CharField(max_length=50, default=False)
-    product_category = models.CharField(max_length=50, default=False)
+    # product_category = models.CharField(max_length=50, default=False)
     description = models.CharField(max_length=500, default=False)
     software_name = models.CharField(max_length=50, default=False)
     business_areas = models.CharField(max_length=200, default=False)

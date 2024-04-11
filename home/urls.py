@@ -8,8 +8,10 @@ app_name='home'
 urlpatterns = [
   path('', views.homepage,  name='homepage'),
   path('tables/', views.tables, name='tables'),
+  path('client_tables/', views.client_tables, name='client_tables'),
   path('dashboard/',views.dashboard,name='index'),
   path('register/',views.register,name='register'),
+  
   path('registerVendor/',views.registerVendor,name='registerVendor'),
   path('registerClient/',views.registerClient,name='registerClient'),
   

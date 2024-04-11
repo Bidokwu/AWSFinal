@@ -30,6 +30,13 @@ def tables(request):
   }
   return render(request, "pages/dynamic-tables.html", context)
 
+
+def client_tables(request):
+  context = {
+    'segment': 'tables'
+  }
+  return render(request, "pages/client_table.html", context)
+
 @login_required
 def userLogout(request):
     logout(request)
