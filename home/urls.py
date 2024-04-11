@@ -10,8 +10,8 @@ urlpatterns = [
   path('tables/', views.tables, name='tables'),
   path('dashboard/',views.dashboard,name='index'),
   path('register/',views.register,name='register'),
-  path('registerClient/',views.registerClient,name='registerClient'),
   path('registerVendor/',views.registerVendor,name='registerVendor'),
+  path('registerClient/',views.registerClient,name='registerClient'),
   
   # Multiuser Dashboards 
   path('vendor/',views.vendorDash,name='vendorDash'),
