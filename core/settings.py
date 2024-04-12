@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "landingpage",
     'crispy_forms',
     'crispy_bootstrap4',
+    'hidefield',
 
     # Tooling Dynamic_DT
     'django_dyn_dt',             # <-- NEW: Dynamic_DT

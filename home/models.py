@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
+from hidefield.fields import HideField 
 
 # Create your models here.
 
+class HideCharField(HideField, models.CharField):
+    pass
+
 class Product(models.Model):
     id    = models.AutoField(primary_key=True)
-    # company_name = models.CharField(max_length=200, default=False)
+    company_name = HideCharField(max_length=200, default=False, null=True)
     type_of_software = models.CharField(max_length=200, default=False)
     # vendor_id = models.PositiveIntegerField(default=False)
     website = models.CharField(max_length=50, default=False)
