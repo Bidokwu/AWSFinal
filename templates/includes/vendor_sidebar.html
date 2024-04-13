@@ -26,7 +26,7 @@
           </a>
         </li>
         <li class="nav-item {% if 'home:tables' in segment %}active{% endif %}">
-          <a href="{% url 'home:client_tables' %}" class="nav-link "><span class="pcoded-micon"><i
+          <a href="{% url 'home:vendor_tables' %}" class="nav-link "><span class="pcoded-micon"><i
                 class="feather icon-server text-c-green"></i></span><span class="pcoded-mtext">Product</span></a>
         </li>
         {% if not request.user.is_authenticated %}

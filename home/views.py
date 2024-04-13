@@ -4,6 +4,8 @@ from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordRes
 from django.views.generic import CreateView
 from django.contrib.auth import logout, authenticate,login
 
+from .models import Product 
+
 
 from home.forms import clientForm,clientAddForm,vendorForm,vendorAddForm
 from django.http import HttpResponse,HttpResponseRedirect
@@ -32,10 +34,15 @@ def tables(request):
 
 
 def client_tables(request):
+  products = Product.objects.all()
+  print("##############",products, "#######################")
+  return render(request, "pages/client_table.html", {'products':products})
+
+def vendor_tables(request):
   context = {
-    'segment': 'tables'
+    'vendor': 'tables'
   }
-  return render(request, "pages/client_table.html", context)
+  return render(request, "pages/vendor_table.html", context)
 
 @login_required
 def userLogout(request):
@@ -136,3 +143,6 @@ def clientDash(request):
 
 def vendorDash(request):
     return render(request,'dashboard/vendorDash.html')
+
+
+

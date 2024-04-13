@@ -42,7 +42,7 @@
                 class="feather icon-lock"></i></span><span class="pcoded-mtext">Authentication</span></a>
           <ul class="pcoded-submenu">
             <li class=""><a href="{% url 'login' %}" class="">Sign IN</a></li>
-            <li class=""><a href="{% url 'register' %}" class="">Sign UP</a></li>
+            {% comment %} <li class=""><a href="{% url 'register' %}" class="">Sign UP</a></li> {% endcomment %}
           </ul>
         </li>
         {% endif %}
@@ -129,7 +129,7 @@
           <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i
                 class="feather icon-lock"></i></span><span class="pcoded-mtext">Authentication</span></a>
           <ul class="pcoded-submenu">
-            <li class=""><a href="{% url 'register' %}" class="" target="_blank">Sign up</a></li>
+            {% comment %} <li class=""><a href="{% url 'register' %}" class="" target="_blank">Sign up</a></li> {% endcomment %}
             <li class=""><a href="{% url 'login' %}" class="" target="_blank">Sign in</a></li>
           </ul>
         </li>

@@ -9,7 +9,6 @@ class HideCharField(HideField, models.CharField):
 
 class Product(models.Model):
     id    = models.AutoField(primary_key=True)
-    company_name = HideCharField(max_length=200, default=False, null=True)
     type_of_software = models.CharField(max_length=200, default=False)
     # vendor_id = models.PositiveIntegerField(default=False)
     website = models.CharField(max_length=50, default=False)
@@ -24,6 +23,7 @@ class Product(models.Model):
         ('cloud_based', 'cloud_based'),
         ('cloud_enabled', 'cloud_enabled'),
     )
+    created_by = models.CharField(max_length=200, default=False, null=True)
     cloud_type=models.CharField(
         max_length=200,
         choices=cloud_options,
@@ -33,7 +33,7 @@ class Product(models.Model):
     additional_info = models.CharField(max_length=500, default=False)
     
     def __str__(self):
-        return self.company_name
+        return self.software_name
     
     
     

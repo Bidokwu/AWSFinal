@@ -18,9 +18,41 @@
 
 <div class="row">
   <div class="col-md-12"> 
-    <div class="iframe-container">
-      <iframe class="parent-fit" src="/datatb/product/"></iframe>    
-    </div>
+      <table class="table table-responsive">
+        <thead>
+          <tr class="fw-bolder">
+            <th>ID</th>
+            <th>Type_of_software</th>
+            {% comment %} <th>Vendor_id</th> {% endcomment %}
+            <th>Website</th>
+            {% comment %} <th>Product_category</th> {% endcomment %}
+            <th>Description</th>
+            <th>Software_name</th>
+            <th>Business_areas</th>
+            <th>Modules</th>
+            <th>Financial_services_client_types</th>
+            <th>Cloud_type</th>
+            <th>Additional_info</th>  
+          </tr>       
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+          <td>{{ product.id   }}</td>
+          <td>{{ product.type_of_software }}</td>
+          <td>{{ product.website }}</td>
+          <td>{{ product.description  }}</td>
+          <td>{{ product.software_name   }}</td>
+          <td>{{ product.modules     }}</td>
+          <td>{{ product.financial_services_client_types  }}</td>
+          <td>{{ product.created_by  }}</td>
+          <td>{{ product.cloud_type  }}</td>
+          <td>{{ product.additional_info   }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
     </div>
 </div>
+
 {% endblock content %}
