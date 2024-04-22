@@ -35,7 +35,6 @@ def tables(request):
 
 def client_tables(request):
   products = Product.objects.all()
-  print("##############",products, "#######################")
   return render(request, "pages/client_table.html", {'products':products})
 
 def vendor_tables(request):

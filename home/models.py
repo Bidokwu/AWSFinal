@@ -56,16 +56,16 @@ class Client(models.Model):
     
 class Vendor(models.Model):
     vendor=models.OneToOneField(User,on_delete=models.CASCADE)
-    company_name = models.CharField(max_length=100, default=False)
-    address = models.CharField(max_length=100, default=False)
+    company_name = models.CharField(max_length=100, default='Name of Organization')
+    address = models.CharField(max_length=100, default='Street name and zipcode')
     location_countries = models.CharField(max_length=500)
-    company_established = models.PositiveIntegerField(default=False)
+    company_established = models.PositiveIntegerField(default='Year of establishment')
     location_cities = models.CharField(max_length=100)
-    contact_telephone_no = models.CharField(max_length=200, default=False)
-    no_of_employees = models.PositiveIntegerField(default=False)
+    contact_telephone_no = models.CharField(max_length=200, default='+44-123-4567')
+    no_of_employees = models.PositiveIntegerField(default='1-100000')
     internal_professional_services = models.CharField(max_length=3, default=False)
-    last_demo_date = models.CharField(max_length=20, default=False)
-    last_reviewed_date = models.CharField(max_length=20, default=False)
+    last_demo_date = models.CharField(max_length=20, default='dd-mm-yyyy')
+    last_reviewed_date = models.CharField(max_length=20, default='dd-mm-yyyy')
     document_to_attach = models.FileField(max_length=3, default=None,blank=True, null=True)
     is_client=models.BooleanField(default=False)
     
