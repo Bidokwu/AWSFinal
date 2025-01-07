@@ -1,7 +1,7 @@
 
 ======================================================================================================================================
 
-Machine Learning Engineer
+Vendor Inventory Management System Using Django, PostgreSQL and Javascript
 -------------------------
 
 *   🌍  I'm based in Cambridge, United Kingdom
