@@ -4,8 +4,6 @@
 Vendor Inventory Management System Using Django, PostgreSQL and Javascript
 -------------------------
 
-*   🌍  I'm based in Cambridge, United Kingdom
-*   ✉️  You can contact me at [alfredbidokwu@yahoo.com](mailto:alfredbidokwu@yahoo.com)
 *   🧠  One of the key businesses for financial services consultancies is to assist companies to identify and
         select the appropriate technology (applications and infrastructure) for their business needs. To do this
         effectively, the consultancy must have functional and technical knowledge about the different solutions
@@ -21,5 +19,15 @@ Vendor Inventory Management System Using Django, PostgreSQL and Javascript
         services vendors.
         A key component for the success of this application is how easy it is to understand and use. The user
         interface must be simple to use both from a data entry and an information discovery perspective
+
+    Current Challenges
+        1. Lack of visibility + lack of relevant information makes it difficult to determine the
+        appropriateness of potential solutions easily and quickly for clients = Lost Revenue.
+        2. Unable to deliver timely, relevant, and insightful solution ideas for clients due to the amount of
+        manual work required to gather and organise information = Lost Opportunities
+        3. Vendor application knowledge is siloed/manual with information/data captured and stored in
+        various places using various methods, making it more cumbersome to identify, analyse, and
+        compare different solution opportunities for clients = Lost time
+
     
 *   🤝  I'm open to collaborating on similar interesting projects.
