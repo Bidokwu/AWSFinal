@@ -62,9 +62,6 @@ Fuctionality:
         product(s) from within the system so that it can be viewed online.
         
         
-        3.2 Optional Functionality
-        
-        
         Create an on-line report that contains details of the selected system or systems. This report
         should be in PDF format and be able to be saved and/or printed. Optionally, create an Excel
         spreadsheet with the data.
