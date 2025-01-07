@@ -22,9 +22,11 @@ Vendor Inventory Management System Using Django, PostgreSQL and Javascript
 
 
     Current Challenges
+    <b>
+    
         1. Lack of visibility + lack of relevant information makes it difficult to determine the
         appropriateness of potential solutions easily and quickly for clients = Lost Revenue.
-        </b>
+        <b>
         2. Unable to deliver timely, relevant, and insightful solution ideas for clients due to the amount of
         manual work required to gather and organise information = Lost Opportunities
         <b></b>
